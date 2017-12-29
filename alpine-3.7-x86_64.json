@@ -19,7 +19,7 @@
     "vm_name": "packer-alpine.3.7.0-x86_64",
     "disk_interface": "virtio-scsi",
     "disk_size": "{{user `disk_size`}}",
-    "headless": false,
+    "headless": true,
     "http_directory": "http/alpine3.7.0",
     "boot_wait": "30s",
     "boot_command": [
@@ -61,7 +61,7 @@
     "output_directory": "output-alpine.3.7.0-x86_64-{{build_type}}",
     "vm_name": "packer-alpine.3.7.0-x86_64",
     "disk_size": "{{user `disk_size`}}",
-    "headless": false,
+    "headless": true,
     "http_directory": "http/alpine3.7.0",
     "boot_wait": "30s",
     "boot_command": [
@@ -99,7 +99,7 @@
   "provisioners": [
     {
       "type": "shell",
-      "inline":"echo hello"
+      "inline":"echo test SSH :D"
     }
   ],
   "post-processors": [{

@@ -1,11 +1,22 @@
  {
+  "variables": {
+    "vm_name": "packer-debian-9.3-amd64",
+    "compression_level": "6",
+    "cpus": "1",
+    "memory": "512",
+    "disk_size": "4000",
+    "iso_url": "http://cdimage.debian.org/debian-cd/9.3.0/amd64/iso-cd/debian-9.3.0-amd64-netinst.iso",
+    "iso_checksum": "83480be837710a76fd4e75a6573ca110e06f5a7589d2d3852bdb0f45749800b3",
+    "iso_checksum_type": "sha256",
+    "ssh_timeout": "60m"
+  },
   "builders": [{
     "type": "qemu",
-    "iso_url": "{{user `mirror`}}/9.3.0/amd64/iso-cd/debian-9.3.0-amd64-netinst.iso",
+    "iso_url": "{{user `iso_url`}}",
     "iso_checksum": "{{user `iso_checksum`}}",
     "iso_checksum_type": "{{user `iso_checksum_type`}}",
     "output_directory": "output-debian-9.3-amd64-{{build_type}}",
-    "vm_name": "packer-debian-9.3-amd64",
+    "vm_name": "{{user `vm_name`}}",
     "disk_size": "{{user `disk_size`}}",
     "headless": true,
     "http_directory": "http",
@@ -28,11 +39,11 @@
   }, {
     "type": "virtualbox-iso",
     "guest_os_type": "Debian_64",
-    "iso_url": "{{user `mirror`}}/9.3.0/amd64/iso-cd/debian-9.3.0-amd64-netinst.iso",
+    "iso_url": "{{user `iso_url`}}",
     "iso_checksum": "{{user `iso_checksum`}}",
     "iso_checksum_type": "{{user `iso_checksum_type`}}",
     "output_directory": "output-debian-9.3-amd64-{{build_type}}",
-    "vm_name": "packer-debian-9.3-amd64",
+    "vm_name": "{{user `vm_name`}}",
     "disk_size": "{{user `disk_size`}}",
     "headless": true,
     "http_directory": "http",
@@ -69,15 +80,5 @@
     "type": "vagrant",
     "compression_level": "{{user `compression_level`}}",
     "output": "debian-9.3-amd64-{{.Provider}}.box"
-  }],
-  "variables": {
-    "compression_level": "6",
-    "cpus": "1",
-    "disk_size": "4000",
-    "iso_checksum": "83480be837710a76fd4e75a6573ca110e06f5a7589d2d3852bdb0f45749800b3",
-    "iso_checksum_type": "sha256",
-    "memory": "512",
-    "mirror": "http://cdimage.debian.org/debian-cd/",
-    "ssh_timeout": "60m"
-  }
+  }]
 }
