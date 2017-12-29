@@ -1,7 +1,7 @@
  {
   "variables": {
     "vm_name": "packer-debian-9.3-amd64",
-    "compression_level": "6",
+    "compression_level": "9",
     "cpus": "1",
     "memory": "512",
     "disk_size": "4000",
@@ -17,6 +17,7 @@
     "iso_checksum_type": "{{user `iso_checksum_type`}}",
     "output_directory": "output-debian-9.3-amd64-{{build_type}}",
     "vm_name": "{{user `vm_name`}}",
+    "disk_interface": "virtio-scsi",
     "disk_size": "{{user `disk_size`}}",
     "headless": true,
     "http_directory": "http",
@@ -59,6 +60,7 @@
     "ssh_username": "vagrant",
     "ssh_password": "vagrant",
     "shutdown_command": "sudo systemctl poweroff",
+    "hard_drive_interface": "sata",
     "vboxmanage": [
       ["modifyvm", "{{.Name}}", "--memory", "{{user `memory`}}"],
       ["modifyvm", "{{.Name}}", "--cpus", "{{user `cpus`}}"]
