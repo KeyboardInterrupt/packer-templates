@@ -53,8 +53,7 @@ packer build -var compression_level=6 -var disk_size=10000 alpine-3.7-x86_64.jso
 ## Usage in Vagrant
 
 You can either use the prebuilt Boxes over here:
-[KeboardInterrupt's Boxes on Vagrant Cloud](https://app.vagrantup.com/kbi/)
-upload them to your own account on Vagrant Cloud or use the boxes you built locally.
+[KeboardInterrupt's Boxes on Vagrant Cloud](https://app.vagrantup.com/kbi/), upload them to your own account on Vagrant Cloud or use the boxes you built locally.
 
 ``` bash
 vagrant box add ./alpine.3.7.0-x86_64-virtualbox.box
