@@ -1,7 +1,5 @@
 {
   "compression_level": "9",
   "disk_size": "8000",
-  "ssh_timeout": "12h",
-  "cloud_token": "SjgpuTq5dBO2ng.atlasv1.oI2Wn9neEszyeyhFmkkMIjga36ZgnLIDIoRLnn0CUneawXlIgsrPaNYOXk9gMEcPYwA"
-  
+  "ssh_timeout": "120m",
 }
