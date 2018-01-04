@@ -20,12 +20,12 @@ To build the Boxes you need to run packer build, on the corresponding Template (
 packer build -parallel=false alpine-3.7-x86_64.json
 ``` 
 
-the option `-parallel=false` is needed because you cannot run the libvirt and virtualbox provider in parallel.
+the option `-parallel=false` is needed because you cannot run the qemu/libvirt and virtualbox provider in parallel.
 
-If you only want to build either the `libvirt` or `virtualbox` box you need to add the option `-only <PROVIDER>` to the packer build command like this:
+If you only want to build either the `qemu` or `virtualbox` box you need to add the option `-only <PROVIDER>` to the packer build command like this:
 
 ``` bash
-packer build -only=libvirt alpine-3.7-x86_64.json
+packer build -only=qemu alpine-3.7-x86_64.json
 ```
 
 or 
