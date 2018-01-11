@@ -92,15 +92,19 @@
       ["modifyvm", "{{.Name}}", "--cpus", "{{user `cpus`}}"]
     ]
   }],
-  "provisioners": [{
-    "type": "shell",
-    "scripts": [
-      "scripts/ubuntu-16.04/apt.sh",
-      "scripts/ubuntu-16.04/python2.sh",
+  "provisioners": [
+    {"type": "shell",
+    "expect_disconnect": true,
+    "script": "scripts/ubuntu-16.04/apt.sh"
+    },
+    {"type": "shell",
+    "pause_before": "120s",
+    "scripts" : [
       "scripts/ubuntu-16.04/virtualbox.sh",
+      "scripts/ubuntu-16.04/python2.sh",
+      "scripts/ubuntu-16.04/cleanup.sh",
       "scripts/common/vagrant.sh",
       "scripts/common/sshd.sh",
-      "scripts/ubuntu-16.04/cleanup.sh",
       "scripts/common/minimize.sh"
     ]
   }],
