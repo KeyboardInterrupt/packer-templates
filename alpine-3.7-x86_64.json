@@ -8,7 +8,9 @@
     "iso_url": "http://dl-cdn.alpinelinux.org/alpine/v3.7/releases/x86_64/alpine-virt-3.7.0-x86_64.iso",
     "iso_checksum": "5a4b2588afd32e7024dd61d9558b77b03a4f3189cb4c9fc05e9e944fb780acdd",
     "iso_checksum_type": "sha256",
-    "ssh_timeout": "60m"
+    "ssh_timeout": "60m",
+    "ssh_username": "vagrant",
+    "ssh_password": "vagrant"
   },
   "builders": [{
     "type": "qemu",
@@ -45,8 +47,8 @@
       "adduser vagrant wheel<enter>"
     ],
     "ssh_timeout": "{{user `ssh_timeout`}}",
-    "ssh_username": "vagrant",
-    "ssh_password": "vagrant",
+    "ssh_username": "{{user `ssh_username`}}",
+    "ssh_password": "{{user `ssh_password`}}",
     "shutdown_command": "echo vagrant | sudo -S /sbin/poweroff",
     "qemuargs": [
       ["-m", "{{user `memory`}}"],
@@ -87,8 +89,8 @@
       "adduser vagrant wheel<enter>"
     ],
     "ssh_timeout": "{{user `ssh_timeout`}}",
-    "ssh_username": "vagrant",
-    "ssh_password": "vagrant",
+    "ssh_username": "{{user `ssh_username`}}",
+    "ssh_password": "{{user `ssh_password`}}",
     "shutdown_command": "echo vagrant | sudo -S /sbin/poweroff",
     "hard_drive_interface": "sata",
     "vboxmanage": [
