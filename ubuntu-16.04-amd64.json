@@ -8,7 +8,9 @@
     "iso_url": "http://releases.ubuntu.com/16.04/ubuntu-16.04.3-server-amd64.iso",
     "iso_checksum": "a06cd926f5855d4f21fb4bc9978a35312f815fbda0d0ef7fdc846861f4fc4600",
     "iso_checksum_type": "sha256",
-    "ssh_timeout": "60m"
+    "ssh_timeout": "60m",
+    "ssh_username": "vagrant",
+    "ssh_password": "vagrant"
   },
   "builders": [{
     "type": "qemu",
@@ -43,8 +45,8 @@
       "<enter>"
     ],
     "ssh_timeout": "{{user `ssh_timeout`}}",
-    "ssh_username": "vagrant",
-    "ssh_password": "vagrant",
+    "ssh_username": "{{user `ssh_username`}}",
+    "ssh_password": "{{user `ssh_password`}}",
     "shutdown_command": "sudo systemctl poweroff",
     "qemuargs": [
       ["-m", "{{user `memory`}}"],
@@ -83,8 +85,8 @@
       "<enter>"
     ],
     "ssh_timeout": "{{user `ssh_timeout`}}",
-    "ssh_username": "vagrant",
-    "ssh_password": "vagrant",
+    "ssh_username": "{{user `ssh_username`}}",
+    "ssh_password": "{{user `ssh_password`}}",
     "shutdown_command": "sudo systemctl poweroff",
     "hard_drive_interface": "sata",
     "vboxmanage": [
