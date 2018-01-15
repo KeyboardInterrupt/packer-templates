@@ -72,7 +72,6 @@
     "type": "shell",
     "scripts": [
       "scripts/debian-9.3/apt.sh",
-      "scripts/debian-9.3/python2.sh",
       "scripts/debian-9.3/virtualbox.sh",
       "scripts/common/vagrant.sh",
       "scripts/common/sshd.sh",
