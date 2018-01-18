@@ -1,5 +1,5 @@
 {
   "compression_level": "9",
-  "disk_size": "8000",
-  "ssh_timeout": "120m",
+  "disk_size": "40000",
+  "ssh_timeout": "120m"
 }
